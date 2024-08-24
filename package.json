@@ -1,0 +1,21 @@
+{
+  "name": "long-shot-dice-game-tracker",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "build": "npx parcel build index.html --no-source-maps --no-scope-hoist --public-url=/long-shot-dice-game-tracker",
+    "check-types": "tsc --noEmit",
+    "serve": "npx parcel serve index.html --log-level verbose --no-cache"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "mithril": "^2.2.2"
+  },
+  "devDependencies": {
+    "@parcel/resolver-glob": "^2.10.3",
+    "@parcel/transformer-sass": "^2.10.3",
+    "@types/mithril": "^2.2.6",
+    "parcel": "^2.10.3"
+  }
+}

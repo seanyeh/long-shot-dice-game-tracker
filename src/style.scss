@@ -1,0 +1,224 @@
+$color-1: #DF2D3A;
+$color-2: #F1D603;
+$color-3: #2E5792;
+$color-4: #E552C1;
+$color-5: #3B7342;
+$color-6: #4BA8DC;
+$color-7: #FE9443;
+$color-8: #7645B9;
+
+@font-face {
+    font-family: 'lucky';
+    src: url('./LuckiestGuy-Regular.ttf');
+}
+
+h1 {
+  text-align: center;
+  font-family: "lucky";
+  font-size: 2.3rem;
+  font-weight: normal;
+  margin-bottom: 0;
+}
+
+body {
+  user-select: none;
+  margin: 0;
+
+  background-image: url(/src/img/bg.jpg);
+  // background-position: center;
+  background-repeat: no-repeat;
+}
+
+div.grid {
+  display: flex;
+  flex-direction: column;
+  margin: 10px;
+
+  div.row {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+div.cell {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin: 2px;
+
+  font-weight: bold;
+  font-size: 2rem;
+}
+
+div.concessions {
+  .cell {
+    border-radius: 50%;
+    width: 48px;
+    height: 48px;
+  }
+
+  div.x {
+    font-size: 3rem;
+  }
+}
+
+div.prizes {
+  .cell {
+    width: 60px;
+    height: 60px;
+    background-size: 48px;
+    border: 1px solid gray;
+  }
+}
+
+div.jerseys {
+  .cell {
+    width: 60px;
+    height: 60px;
+    background-size: 48px;
+  }
+}
+
+div.bets {
+  .cell {
+    width: 48px;
+    height: 48px;
+    background-size: 32px;
+  }
+
+  .multiplier {
+    font-size: 1.4em;
+    opacity: 0.7;
+  }
+
+  .topRow {
+    div {
+      font-size: 1.1rem;
+    }
+
+    .cell {
+      height: 32px;
+    }
+  }
+}
+
+div.x {
+  position: absolute;
+  top: 10px;
+
+  color: black;
+  font-family: "lucky";
+  font-size: 4rem;
+
+  opacity: 70%;
+}
+
+.bg-color-1 { background-color: $color-1; color: white; }
+.bg-color-2 { background-color: $color-2; }
+.bg-color-3 { background-color: $color-3; color: white; }
+.bg-color-4 { background-color: $color-4; }
+.bg-color-5 { background-color: $color-5; color: white; }
+.bg-color-6 { background-color: $color-6; }
+.bg-color-7 { background-color: $color-7; }
+.bg-color-8 { background-color: $color-8; color: white; }
+
+$img-names: (
+  bets,
+  bets3,
+  concessions,
+  helmet,
+  home,
+  horse,
+  horse_plus3,
+  horse_minus3,
+  horses_plus2,
+  horses_minus2,
+  horseshoe,
+  jersey,
+  scoring,
+);
+@each $img-name in $img-names {
+  .bg-#{$img-name} {
+    background-image: url("/src/img/#{$img-name}.png");
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+}
+
+.increment {
+  background-color: black;
+  color: white;
+}
+
+#topbar {
+  display: flex;
+  flex-direction: row;
+  height: 48px;
+
+  margin-bottom: 20px;
+
+  border-bottom: 1px solid gray;
+
+  .cell {
+    justify-content: center;
+    align-items: center;
+
+    width: 48px;
+    background-size: 48px;
+  }
+
+  // Hack
+  div.x {
+    top: 0;
+  }
+
+  div.space {
+    flex: 1;
+  }
+
+  div.money {
+    margin-top: 20px;
+    margin-right: 25px;
+    margin-left: 25px;
+    font-size: 3rem;
+    font-family: "lucky";
+    color: green;
+  }
+}
+
+
+// Spacing to pad bottom so that scrolling to bottom will show still content
+#bottom-spacing {
+  height: 60px;
+}
+
+#navbar {
+  overflow: hidden;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 60px;
+
+  display: flex;
+  flex-direction: row;
+
+  div {
+    background-size: 32px;
+  }
+
+  border: 1px solid gray;
+
+
+  .item {
+    flex: 1;
+
+    background-color: white;
+    &.current {
+      background-color: transparent;
+    }
+  }
+}
